@@ -67,8 +67,9 @@ export function registerRetentionTools(server: McpServer, clover: CloverClient) 
       restaurantName: z.string().optional().default("our restaurant"),
       offerDetail: z.string().optional().describe("Optional promo to include e.g. '10% off your next visit'"),
       channel: z.enum(["whatsapp", "sms", "email"]).optional().default("whatsapp"),
+      language: z.string().optional().describe("BCP-47 language code for the message (e.g. 'vi' for Vietnamese, 'ko' for Korean, 'es' for Spanish). Defaults to English."),
     },
-    async ({ customerId, restaurantName, offerDetail, channel }) => {
+    async ({ customerId, restaurantName, offerDetail, channel, language }) => {
       const [profile, orders] = await Promise.all([
         clover.get<any>(clover.v3(`/customers/${customerId}`), {
           expand: "phoneNumbers,emailAddresses",
@@ -105,17 +106,18 @@ export function registerRetentionTools(server: McpServer, clover: CloverClient) 
         ? profile.emailAddresses?.elements?.[0]?.emailAddress
         : profile.phoneNumbers?.elements?.[0]?.phoneNumber;
 
-      return {
-        content: [{
-          type: "text",
-          text: JSON.stringify({
-            customer: firstName,
-            channel,
-            contact: contact ?? "No contact info on file",
-            message: messages[channel],
-          }, null, 2),
-        }],
+      const result: Record<string, any> = {
+        customer: firstName,
+        channel,
+        contact: contact ?? "No contact info on file",
+        message: messages[channel],
       };
+
+      if (language && language !== "en") {
+        result._language_directive = `Rewrite the message field naturally in the language with BCP-47 code: ${language}. Keep the warm, personal tone. Do not translate the restaurant name.`;
+      }
+
+      return { content: [{ type: "text", text: JSON.stringify(result, null, 2) }] };
     }
   );
 

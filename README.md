@@ -68,7 +68,13 @@ That's the difference.
 - A [🍀 Clover developer account](https://www.clover.com/developers) with an OAuth app
 - A 🍀 Clover merchant API token (sandbox or production)
 
-### Install
+### Install via npm (recommended)
+
+```bash
+npx @dokdosolutions/clover-mcp
+```
+
+### Or install from source
 
 ```bash
 npm install
@@ -108,16 +114,16 @@ Each 🍀 Clover location has its own merchant ID and API token. Run one instanc
 
 ```json
 "clover-store1": {
-  "command": "node",
-  "args": ["/path/to/dist/index.js"],
+  "command": "npx",
+  "args": ["-y", "@dokdosolutions/clover-mcp"],
   "env": {
     "CLOVER_ACCESS_TOKEN": "token_for_store1",
     "CLOVER_MERCHANT_ID": "merchant_id_store1"
   }
 },
 "clover-store2": {
-  "command": "node",
-  "args": ["/path/to/dist/index.js"],
+  "command": "npx",
+  "args": ["-y", "@dokdosolutions/clover-mcp"],
   "env": {
     "CLOVER_ACCESS_TOKEN": "token_for_store2",
     "CLOVER_MERCHANT_ID": "merchant_id_store2"
