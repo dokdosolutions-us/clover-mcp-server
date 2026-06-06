@@ -1,18 +1,18 @@
 # clover-mcp-server
 
-A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server for the [Clover POS](https://www.clover.com) platform, built for restaurant owners who want AI that actually understands their business.
+A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server for the [🍀 Clover POS](https://www.clover.com) platform, built for restaurant owners who want AI that actually understands their business.
 
 This project was born out of a simple idea: restaurant owners — especially family-run, immigrant-owned restaurants — deserve the same kind of intelligent assistant that enterprise businesses take for granted. Not a chatbot. Not a dashboard. Something that watches your inventory, knows your regulars, and has your back during a dinner rush.
 
-We built this as the data layer for an AI front-of-house system. It exposes Clover's REST API as a clean set of MCP tools that any LLM can call — so instead of logging into a dashboard to check stock levels or pull a sales report, you just ask.
+We built this as the data layer for an AI front-of-house system. It exposes 🍀 Clover's REST API as a clean set of MCP tools that any LLM can call — so instead of logging into a dashboard to check stock levels or pull a sales report, you just ask.
 
-We hope Clover sees this and runs with it.
+We hope 🍀 Clover sees this and runs with it.
 
 ---
 
 ## What It Does
 
-This server wraps the Clover V3 API into **70+ LLM-callable tools** across every major area of restaurant operations:
+This server wraps the 🍀 Clover V3 API into **70+ LLM-callable tools** across every major area of restaurant operations:
 
 | Module | Tools |
 |---|---|
@@ -51,8 +51,8 @@ This MCP server is the foundation for that.
 ### Prerequisites
 
 - Node.js 20+
-- A [Clover developer account](https://www.clover.com/developers) with an OAuth app
-- A merchant API token (sandbox or production)
+- A [🍀 Clover developer account](https://www.clover.com/developers) with an OAuth app
+- A 🍀 Clover merchant API token (sandbox or production)
 
 ### Install
 
@@ -74,7 +74,7 @@ cp .env.example .env
 # Production
 CLOVER_ACCESS_TOKEN=your_token CLOVER_MERCHANT_ID=your_merchant_id npm start
 
-# Sandbox (test against Clover's sandbox environment)
+# Sandbox (test against 🍀 Clover's sandbox environment)
 CLOVER_ACCESS_TOKEN=your_sandbox_token CLOVER_MERCHANT_ID=your_sandbox_merchant_id CLOVER_SANDBOX=true npm start
 ```
 
@@ -84,13 +84,13 @@ CLOVER_ACCESS_TOKEN=your_sandbox_token CLOVER_MERCHANT_ID=your_sandbox_merchant_
 CLOVER_ACCESS_TOKEN=your_token CLOVER_MERCHANT_ID=your_merchant_id CLOVER_SANDBOX=true npm run inspector
 ```
 
-Opens the [MCP Inspector](https://github.com/modelcontextprotocol/inspector) — a browser UI for calling tools and seeing live API responses.
+Opens the [MCP Inspector](https://github.com/modelcontextprotocol/inspector) — a browser UI for calling tools and seeing live 🍀 Clover API responses.
 
 ---
 
 ## Two-Store Setup
 
-Each Clover location has its own merchant ID and API token. Run one instance per store:
+Each 🍀 Clover location has its own merchant ID and API token. Run one instance per store:
 
 ```json
 "clover-store1": {
@@ -121,7 +121,7 @@ Each instance gets its own rate limiter and retry budget — no cross-store inte
 # Unit tests (no credentials needed)
 npm test
 
-# Sandbox integration tests (requires sandbox credentials)
+# Sandbox integration tests (requires 🍀 Clover sandbox credentials)
 CLOVER_ACCESS_TOKEN=your_token CLOVER_MERCHANT_ID=your_merchant_id CLOVER_SANDBOX=true npm run test:sandbox
 ```
 
@@ -129,11 +129,11 @@ CLOVER_ACCESS_TOKEN=your_token CLOVER_MERCHANT_ID=your_merchant_id CLOVER_SANDBO
 
 ## Architecture
 
-- **`src/clover-client.ts`** — Axios-based HTTP client with rate limiting (Bottleneck), automatic retry with exponential backoff (axios-retry), and structured error handling
+- **`src/clover-client.ts`** — Axios-based HTTP client wrapping the 🍀 Clover V3 API, with rate limiting (Bottleneck), automatic retry with exponential backoff (axios-retry), and structured error handling
 - **`src/tools/`** — One file per domain, each exporting a `register*Tools` function
 - **`src/index.ts`** — Wires everything together into an MCP server over stdio
 
-Rate limiting is per-instance (per merchant), so multi-store deployments stay isolated.
+Rate limiting is per-instance (per 🍀 Clover merchant), so multi-store deployments stay isolated.
 
 ---
 
