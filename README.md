@@ -42,7 +42,7 @@ Independent restaurants don't have engineering teams. They have POS data they ne
 
 A disproportionate number of independent restaurants in the US are owned by immigrant families — Vietnamese, Korean, Chinese, Mexican, Ethiopian, and countless others — where English may be a second language and the margin for error is razor-thin. These owners work harder than anyone, yet they're the last to benefit from technology that could actually lighten the load.
 
-This project is built with them in mind. An AI that can answer customer questions in any language, surface the right data at the right time, and handle the operational noise — so the people who built something from nothing can focus on what they do best.
+This project is built with them in mind. An AI that can answer customer questions in any language, surface the right data at the right time, and handle the operational noise — so the people who built something from nothing can focus on what they do best; provide and spend time with their family and loved ones.
 
 This MCP server is the foundation for that.
 
