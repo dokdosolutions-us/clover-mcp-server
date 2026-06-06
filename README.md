@@ -36,7 +36,13 @@ This server wraps the Clover V3 API into **70+ LLM-callable tools** across every
 
 The Model Context Protocol, open-sourced by Anthropic, makes it possible to give AI assistants structured, reliable access to external systems. We saw an opportunity to apply this to the restaurant industry — a space full of hardworking owners who are data-rich but time-poor.
 
-Independent restaurants don't have engineering teams. They have POS data they never look at, regulars they forget to reach out to, and inventory that runs out at the worst possible time. This MCP server is the foundation for changing that.
+Independent restaurants don't have engineering teams. They have POS data they never look at, regulars they forget to reach out to, and inventory that runs out at the worst possible time.
+
+A disproportionate number of independent restaurants in the US are owned by immigrant families — Vietnamese, Korean, Chinese, Mexican, Ethiopian, and countless others — where English may be a second language and the margin for error is razor-thin. These owners work harder than anyone, yet they're the last to benefit from technology that could actually lighten the load.
+
+This project is built with them in mind. An AI that can answer customer questions in any language, surface the right data at the right time, and handle the operational noise — so the people who built something from nothing can focus on what they do best.
+
+This MCP server is the foundation for that.
 
 ---
 
