@@ -66,7 +66,7 @@ That's the Dokdo + 🍀 Clover difference.
 
 ### Prerequisites
 
-- Node.js 20+
+- Node.js 24+
 - A [🍀 Clover developer account](https://www.clover.com/developers) with an OAuth app
 - A 🍀 Clover merchant API token (sandbox or production)
 
