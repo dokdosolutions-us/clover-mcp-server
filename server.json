@@ -1,0 +1,70 @@
+{
+  "name": "Lucky – Clover MCP",
+  "description": "Model Context Protocol server for Clover POS — giving AI agents direct access to restaurant operations: menu management, orders, inventory, analytics, customer retention, financial reporting, and more",
+  "version": "1.0.0",
+  "author": "Dokdo Solutions",
+  "homepage": "https://github.com/dokdosolutions-us/clover-mcp-server",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dokdosolutions-us/clover-mcp-server.git"
+  },
+  "license": "MIT",
+  "mcp-name": "clover-mcp",
+  "installation": {
+    "npm": "@dokdosolutions/clover-mcp"
+  },
+  "tools": [
+    {
+      "name": "Menu Management",
+      "description": "Browse items, categories, modifiers, pricing"
+    },
+    {
+      "name": "Order Management",
+      "description": "Query orders, filter by date/status, inspect line items, delivery platform filtering"
+    },
+    {
+      "name": "Customer Management",
+      "description": "Search, create, profile customers with lifetime spend"
+    },
+    {
+      "name": "Inventory Management",
+      "description": "Stock levels, low-stock alerts, adjustments, auto-86"
+    },
+    {
+      "name": "Analytics",
+      "description": "Revenue by period, peak hours, best-sellers, category breakdown"
+    },
+    {
+      "name": "Employee Management",
+      "description": "Shift activity, hours worked, clock-in/out visibility"
+    },
+    {
+      "name": "Financial Reporting",
+      "description": "Daily/weekly/monthly summaries, tender breakdowns, tax reporting"
+    },
+    {
+      "name": "Customer Retention",
+      "description": "Lapsed customers, win-back messaging, birthday outreach, first-time visitors"
+    },
+    {
+      "name": "Operations",
+      "description": "Refund rates, open orders, void detection, table turn analysis"
+    },
+    {
+      "name": "Forecasting",
+      "description": "Week-over-week trends, seasonal patterns, staffing signals"
+    },
+    {
+      "name": "Reservations",
+      "description": "Booking management, conflict detection"
+    },
+    {
+      "name": "Menu Operations",
+      "description": "Bulk pricing updates, happy hour scheduling, allergen tagging"
+    },
+    {
+      "name": "Smart Queries",
+      "description": "Cross-module insights, happy hour analysis, upsell opportunities"
+    }
+  ]
+}
